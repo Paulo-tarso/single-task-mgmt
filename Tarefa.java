@@ -2,25 +2,25 @@ public class Tarefa {
     private String titulo;
     private String descricao;
     private String prazo;
-    private int propriedade;
+    private int prioridade;
+    private Categoria categoria;
 
     //Construtor
-
-    public Tarefa(String titulo, String descricao, String prazo, int propriedade) {
+    public Tarefa(String titulo, String descricao, String prazo, int prioridade, Categoria categoria) {
         this.titulo = titulo;
-        this.descricao = new String();
-        this.prazo = "";
-        this.propriedade = 0;
+        this.descricao = descricao;
+        this.prazo = prazo;
+        this.prioridade = prioridade;
+        this.categoria = categoria;
     }
 
     //Método Get
-    public String getTitulo(String args) {
-        return "titulo: " + this.titulo + args;
+    public String getTitulo() {
+        return this.titulo;
     }
     //Método Set
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-
     }
     // Outros gettes e settes aqui...
     public String getDescricao(){
@@ -36,17 +36,18 @@ public class Tarefa {
     public void setPrazo(String prazo){
         this.prazo = prazo;
     }
-    public int getPropriedade(){
-        return this.propriedade;
+    public int getPrioridade(){
+        return this.prioridade;
     }
-    public void setPropriedade(int propriedade){
-        this.propriedade = propriedade;
+    public void setPrioridade(int prioridade){
+        this.prioridade = prioridade;
     }
     public void exibirDetalhes(){
-        System.out.println("Ttítulo" + this.titulo);
-        System.out.println("Descrição" + this.descricao);
-        System.out.println("Prazo" + this.prazo);
-        System.out.println("Propriedade" + this.propriedade);
+        System.out.println("Título: " + this.titulo);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Prazo: " + this.prazo);
+        System.out.println("Propriedade: " + this.prioridade);
+        System.out.println("Categoria: " + this.categoria.getNome());
     }
 
 }
